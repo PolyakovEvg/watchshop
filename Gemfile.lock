@@ -99,6 +99,8 @@ GEM
     execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
+    faker (3.1.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -277,6 +279,7 @@ DEPENDENCIES
   capybara
   debug
   factory_bot
+  faker
   jbuilder
   jsbundling-rails
   pg
@@ -285,6 +288,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails
   rubocop
+  sassc-rails
   selenium-webdriver
   shoulda-matchers
   sprockets-rails

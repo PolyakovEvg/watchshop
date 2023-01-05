@@ -11,9 +11,10 @@ gem 'jsbundling-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+gem 'sassc-rails'
 
 gem 'puma', '~> 5.0'
-
+gem 'faker'
 gem 'jbuilder'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
