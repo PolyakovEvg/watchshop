@@ -1,2 +1,78 @@
-<p> @brands = <%= @brands.to_a%></p> <hr> 
-<p> @products = <%= @hits.to_a%></p>
+<div id="carouselExample" class="carousel carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <%= image_tag("bnr-2.jpg", alt: "", class: 'd-block w-100')%>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <%= image_tag("bnr-1.jpg", alt: "", class: 'd-block w-100')%>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item active" data-bs-interval="10000">
+      <%= image_tag("bnr-3.jpg", alt: "", class: 'd-block w-100')%>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<%if @brands.nil?%>
+  <h2>No brands </h2>
+<%else%>
+  <div class="row brands d-flex justify-content-center">
+    <% @brands.each do |brand|%>
+      <div class="col-md-3 col-lg-4 brand">
+        <div class="box">
+          <%= image_tag("#{brand.img}", alt: "#{brand.title}", class: 'brand_img d-block w-100')%>
+          <div class="cover">
+            <h3 class="name"><%= brand.title%></h3>
+            <p class="title"><%= brand.description%></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+<%end%>
+<%if @hits.nil?%>
+  <h2>No hits </h2>
+<%else%>
+  <div class="row hits justify-content-center">
+<% @hits.hit.each do |hit|%>
+<div class="card md-3" style="width: 16rem;">
+<<%= link_to , @product_path %>>
+      <%= image_tag("#{hit.img}", class: "card-img", alt: "#{hit.title}")%>
+      <div class="card-body">
+        <h5 class="card-title"><%=hit.title%></h5>
+        <p class="card-text">EXPLORE NOW</p>
+      </div>
+      <ul class="prices d-flex">
+        <li class="list-group-item">
+          <a href="#" class="card-link"><%= image_tag 'cart-2.png', class: 'card-cart-img'%></a>
+        </li>
+        <li class="list-group-item price">$ <%= hit.price%></li>
+        <li class="list-group-item old_price">$ <%= hit.old_price%></li>
+      </ul>
+    </div>
+  <%end%>
+<%end%>
+</div>

@@ -6,8 +6,8 @@ class MainController < ApplicationController
     end
 
     def set_page_options
-        @title = "Watches shop",
-        @description = "Watches shop",
-        @keywords = "Man Women Kids"
+        @page_title = "Watches shop",
+        @page_description = "Luxury shop",
+        @page_keywords = "Man Women Kids"
     end
 end

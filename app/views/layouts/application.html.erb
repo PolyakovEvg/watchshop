@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WatchShop</title>
+    <%= display_meta_tags title: @page_title, description: @page_description, keywords: @page_keywords %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
+  </head>
   <body>
-    <%= yield %>
+      <%= render 'includes/main/top_header' %>
+    <div class="container">
+      <div class="logo">
+        <%= link_to root_path do %>
+          <h1> Luxury watches </h1>
+        <%end%>
+      </div>
+      <%= render 'includes/main/bottom_header' %>
+      <%= yield %>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
   </body>
 </html>

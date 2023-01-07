@@ -10,6 +10,7 @@ gem "breadcrumbs_on_rails"
 # css and js
 gem 'bootstrap', '~> 5.2.3'
 gem 'jsbundling-rails'
+gem 'cssbundling-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'

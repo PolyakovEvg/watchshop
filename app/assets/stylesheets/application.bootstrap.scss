@@ -1,0 +1,41 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+@import './custom/top_header.scss';
+@import './custom/logo.scss';
+@import './custom/bottom_header.scss';
+@import './custom/carousel.scss';
+@import './custom/brands.scss';
+@import './custom/card.scss';
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+html{
+	background:#fff;
+}
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
+@font-face {
+    font-family: 'Lora-Regular';
+    src:asset_path('fonts/Lora-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Muli-Regular';
+    src:asset_path('fonts/Muli-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Lato-Regular';
+    src:asset_path('fonts/Lato-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BreeSerif-Regular';
+    src:asset_path('fonts/BreeSerif-Regular.ttf') format('truetype');
+}
+
