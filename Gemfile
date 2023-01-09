@@ -4,20 +4,22 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+gem 'breadcrumbs_on_rails'
+gem 'meta-tags'
 gem 'rails', '~> 7.0.4'
-gem "meta-tags"
-gem "breadcrumbs_on_rails"
 # css and js
 gem 'bootstrap', '~> 5.2.3'
-gem 'jsbundling-rails'
 gem 'cssbundling-rails'
+gem 'faker'
+gem 'jbuilder'
+gem 'jsbundling-rails'
+gem 'puma', '~> 5.0'
+gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'sassc-rails'
-gem 'puma', '~> 5.0'
-gem 'faker'
-gem 'jbuilder'
+# tree structure for Act Rec
+gem 'ancestry'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 

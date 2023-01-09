@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <div class="breadscrubs-main">
+      <ol class="breadcrumb">
+        <li><a><%= render_breadcrumbs %></a></li>
+        <li class="active"> ><%=@category.title%></li>
+      </ol>
+    </div>
+  </div>
+  <% if @category.products.empty? %>
+  <h2> Not products of this category </h2>
+  <%else%>
+ <h3> <%= @category.title%> </h3>
+    <div class="row hits justify-content-center">
+      <%@category.products.each do |product|%>
+        <div class="card md-3" style="width: 16rem;">
+          <%= link_to '', product_path(product), class: 'product-link'%>
+          <%= image_tag("#{product.img}", class: "card-img", alt: "#{product.title}")%>
+          <div class="card-body">
+            <h5 class="card-title"><%=product.title%></h5>
+            <p class="card-text">EXPLORE NOW</p>
+          </div>
+          <ul class="prices d-flex">
+            <li class="list-group-item">
+              <a href="#" class="card-link"><%= image_tag 'cart-2.png', class: 'card-cart-img'%></a>
+            </li>
+            <li class="list-group-item price">$ <%= product.price%></li>
+            <li class="list-group-item old_price">$ <%= product.old_price%></li>
+          </ul>
+        </div>
+  <%end%>
+        <%=@category.path_ids.product%>
+  <%end%>
+
+</div>

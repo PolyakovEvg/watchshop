@@ -2,14 +2,20 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link search-link" href="#">Home</a>
-        </li>
-      </ul>
-      <form class="d-flex search-form" role="search">
-        <input class="form-control me-4" type="search" placeholder="Search..." aria-label="Search">
-        <button class="search-btn" type="submit"></button>
-      </form>
-    </div>
+        <li class="nav-item d-flex">
+          <%= link_to  "Home", root_path, class: 'nav-link search-link' %>
+          <% Category.roots.each do |category|%>
+            <%= link_to  category.title, category_path(category), class: 'nav-link search-link' %>
+            <% if category.children.present?%>
+              <% render 'includes/menu/menu', category: category %>
+            <%end%>
+        <%end%>
+      </li>
+    </ul>
+    <form class="d-flex search-form" role="search">
+      <input class="form-control me-4" type="search" placeholder="Search..." aria-label="Search">
+      <button class="search-btn" type="submit"></button>
+    </form>
   </div>
+</div>
 </nav>

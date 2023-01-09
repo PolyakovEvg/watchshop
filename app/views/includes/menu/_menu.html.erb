@@ -1,0 +1,4 @@
+<% category.children.each do |sub| %>
+<%= link_to sub.title%>
+ <% render 'includes/menu/menu', category: sub %>
+<%end%>

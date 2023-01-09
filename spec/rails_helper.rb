@@ -6,9 +6,7 @@ require_relative '../config/environment'
 require 'rspec/rails'
 require 'shoulda/matchers'
 
-
 abort('The Rails environment is running in production mode!') if Rails.env.production?
-require 'rspec/rails'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -18,7 +16,7 @@ end
 RSpec.configure do |config|
   RSpec.configure do |config|
     config.include FactoryBot::Syntax::Methods
-  
+
     config.before(:suite) do
       FactoryBot.find_definitions
     end

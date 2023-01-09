@@ -59,7 +59,7 @@
   <div class="row hits justify-content-center">
 <% @hits.hit.each do |hit|%>
 <div class="card md-3" style="width: 16rem;">
-<<%= link_to , @product_path %>>
+<%= link_to '', product_path(hit), class: 'product-link'%>
       <%= image_tag("#{hit.img}", class: "card-img", alt: "#{hit.title}")%>
       <div class="card-body">
         <h5 class="card-title"><%=hit.title%></h5>
