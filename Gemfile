@@ -18,8 +18,13 @@ gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+# search
+gem 'elasticsearch', '~> 8.5.2'
+gem "searchkick"
 # tree structure for Act Rec
 gem 'ancestry'
+#authenticate
+gem 'devise'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -31,6 +36,7 @@ group :development, :test do
   gem 'pg'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'json_spec'
 end
 
 group :development do

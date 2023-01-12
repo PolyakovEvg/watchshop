@@ -11,7 +11,7 @@
             <li><a class="dropdown-item" href="#">RUB</a></li>
           </ul>
         </li>
-         <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Language
           </a>
@@ -20,18 +20,33 @@
             <li><a class="dropdown-item" href="#">English</a></li>
           </ul>
         </li>
-         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Account
-          </a>
+
+        <li class="nav-item dropdown">
+          <% if user_signed_in?%>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_user.email%>
+            </a>
+          <%else%>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Log in
+            </a>
+          <%end%>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
+            <% if user_signed_in?%>
+              <% if current_user.try(:admin)%>
+                <li><%= link_to  'administrator',  '#', class: 'dropdown-item', style: 'color: red' %></li>
+                <li><%= link_to  'API',  '#', class: 'dropdown-item', style: 'color: blue' %></li>
+              <%end%>
+              <li><%= link_to  'Edit profile',  edit_user_registration_path, class: 'dropdown-item' %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to  'Exit',  destroy_user_session_path, class: 'dropdown-item' %></li>
+              <%else%>
+             <li><%= link_to  'Log in',  new_user_session_path, class: 'dropdown-item' %></li>
+             <li><%= link_to  'Sign up',  new_user_registration_path, class: 'dropdown-item' %></li>
+            </ul>
+            <%end%>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
