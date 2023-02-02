@@ -9,6 +9,11 @@
 @import './custom/product_show.scss';
 
 
+
+
+
+
+
 *{
     box-sizing: border-box;
     font-family: 'Lato-Regular';
@@ -26,18 +31,18 @@ body a{
 
 @font-face {
     font-family: 'Lora-Regular';
-    src:asset_path('fonts/Lora-Regular.ttf') format('truetype');
+    src: url('Lora-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Muli-Regular';
-    src:asset_path('fonts/Muli-Regular.ttf') format('truetype');
+    src: url('Muli-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Lato-Regular';
-    src:asset_path('fonts/Lato-Regular.ttf') format('truetype');
+    src: url('Lato-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'BreeSerif-Regular';
-    src:asset_path('fonts/BreeSerif-Regular.ttf') format('truetype');
+    src: url('BreeSerif-Regular.ttf') format('truetype');
 }
 
