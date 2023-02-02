@@ -1,7 +1,7 @@
 set -o errexit
 
 bundle install
-bundle exec rake assets:precompile
+bundle exec rails assets:precompile
 yarn install
 yarn build:css
 yarn build
