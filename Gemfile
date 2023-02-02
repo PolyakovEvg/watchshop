@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+gem 'pg'
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
 gem 'rails', '~> 7.0.4'
@@ -34,7 +35,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot'
   gem 'json_spec'
-  gem 'pg'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
