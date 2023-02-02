@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+gem 'puma', '~> 5.0'
 gem 'pg'
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
@@ -14,7 +15,7 @@ gem 'cssbundling-rails'
 gem 'faker'
 gem 'jbuilder'
 gem 'jsbundling-rails'
-gem 'puma', '~> 5.0'
+gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -33,7 +34,6 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot'
-gem 'sassc-rails'
   gem 'json_spec'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
