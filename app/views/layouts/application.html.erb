@@ -7,20 +7,21 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-
   </head>
   <body>
-      <%= render 'includes/main/top_header' %>
+    <%= render 'includes/main/top_header' %>
     <div class="container">
       <div class="logo">
         <%= link_to root_path do %>
+          <%= link_to  "text" %>
           <h1> Luxury watches </h1>
         <%end%>
       </div>
       <%= render 'includes/main/bottom_header' %>
       <%= render 'includes/main/notifications' %>
       <%= yield %>
+      <%= render 'includes/main/footer' %>
+
     </div>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
   </body>
 </html>

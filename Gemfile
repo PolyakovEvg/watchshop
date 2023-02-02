@@ -20,10 +20,10 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 # search
 gem 'elasticsearch', '~> 8.5.2'
-gem "searchkick"
+gem 'searchkick'
 # tree structure for Act Rec
 gem 'ancestry'
-#authenticate
+# authenticate
 gem 'devise'
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -33,10 +33,10 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot'
+  gem 'json_spec'
   gem 'pg'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'json_spec'
 end
 
 group :development do

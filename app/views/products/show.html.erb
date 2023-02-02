@@ -50,7 +50,7 @@
     <%end%>
   </div>
   <% if @product.related.any?%>
-<h3> Related products: </h3>
+    <h3> Related products: </h3>
     <div class="row hits justify-content-center">
       <%@product.related.each do |related|%>
         <div class="card md-3" style="width: 16rem;">
@@ -68,6 +68,7 @@
             <li class="list-group-item old_price">$ <%= related.old_price%></li>
           </ul>
         </div>
-  <%end%>
-  <%end%>
+      <%end%>
+    <%end%>
+  </div>
 </div>

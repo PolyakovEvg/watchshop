@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:show]
   resources :category, only: [:show]
+  resource :cart, only: %i[show destroy] do
+    resources :items, only: %i[show destroy]
+  end
   get 'search', to: 'search#index'
 end

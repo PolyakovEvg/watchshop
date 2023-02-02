@@ -9,13 +9,13 @@
             <% if category.children.present?%>
               <% render 'includes/menu/menu', category: category %>
             <%end%>
-        <%end%>
-      </li>
-    </ul>
-    <%= form_with url: search_path, method: :get, class: 'd-flex search-form' do |f|%>
-    <%= f.text_field :search, class: "form-control me-4", placeholder: "Search..."%>
-     <%= f.submit "", class: "search-btn" %>
-     <%end%>
+          <%end%>
+        </li>
+      </ul>
+      <%= form_with url: search_path, method: :get, class: 'd-flex search-form' do |f|%>
+        <%= f.text_field :search, class: "form-control me-4", placeholder: "Search..."%>
+        <%= f.submit "", class: "search-btn" %>
+      <%end%>
+    </div>
   </div>
-</div>
 </nav>

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # # frozen_string_literal: true
 
 # require 'rails_helper'
@@ -11,7 +12,7 @@
 #     context "search product" do
 #         it 'find product in db' do
 #             result = JSON.parse(response.body).first.values
-#             expect(result).to contain_exactly(product.title, product.id)  
+#             expect(result).to contain_exactly(product.title, product.id)
 #         end
 
 #         it 'responce with 200 ok' do
@@ -24,10 +25,9 @@
 #                 expect response.body.empty?
 #             end
 #         end
-        
-        
+
 #     end
-    
+
 #   end
-  
+
 # end

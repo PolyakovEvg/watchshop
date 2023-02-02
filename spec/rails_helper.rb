@@ -5,6 +5,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'devise'
 
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
@@ -14,12 +15,11 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
-  RSpec.configure do |config|
-    config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include FactoryBot::Syntax::Methods
 
-    config.before(:suite) do
-      FactoryBot.find_definitions
-    end
+  config.before(:suite) do
+    FactoryBot.find_definitions
   end
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
